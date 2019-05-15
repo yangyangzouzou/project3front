@@ -1,0 +1,16 @@
+*{
+  box-sizing: border-box;
+
+}
+
+a{
+  text-decoration: none;
+  color: #ccc;
+  background: #333;
+}
+
+a:hover{
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease-out;
+}
