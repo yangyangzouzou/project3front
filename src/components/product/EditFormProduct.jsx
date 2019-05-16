@@ -8,13 +8,13 @@ export default class EditFormProduct extends Component {
     super(props);
     this.state = {
       oneProduct: {},
-      inputProductBrand: "",
-      inputSN: "",
-      inputMI: "",
-      inputPrice: "",
-      inputRating: "",
-      inputCat: "",
-      inputType: ""
+      productBrand: "",
+      serialNumber: "",
+      manufacturerInfo: "",
+      price: "",
+      rating: "",
+      category: "",
+      type: ""
     };
   }
 
@@ -24,13 +24,13 @@ export default class EditFormProduct extends Component {
         console.log("lol", dbRes.data);
         this.setState({
           oneProduct: dbRes.data,
-          inputProductBrand: dbRes.data.productBrand,
-          inputSN: dbRes.data.serialNumber,
-          inputMI: dbRes.data.manufacturerInfo,
-          inputPrice: dbRes.data.price,
-          inputRating: dbRes.data.rating,
-          inputCat: dbRes.data.category,
-          inputType: dbRes.data.type
+          productBrand: dbRes.data.productBrand,
+          serialNumber: dbRes.data.serialNumber,
+          manufacturerInfo: dbRes.data.manufacturerInfo,
+          price: dbRes.data.price,
+          rating: dbRes.data.rating,
+          category: dbRes.data.category,
+          type: dbRes.data.type
         });
       })
       .catch(err => console.log(err));
@@ -45,26 +45,26 @@ export default class EditFormProduct extends Component {
     this.setState({ [name]: value });
   };
 
-  handleSubmit = () => {
+  handleSubmit = evt => {
+    evt.preventDefault();
     const {
-      inputProductBrand,
-      inputSN,
-      inputMI,
-      inputPrice,
-      inputRating,
-      inputCat,
-      inputType
+      productBrand,
+      serialNumber,
+      manufacturerInfo,
+      price,
+      rating,
+      category,
+      type
     } = this.state;
-    updateProduct(
-      this.props.match.params.id,
-      inputProductBrand,
-      inputSN,
-      inputMI,
-      inputPrice,
-      inputRating,
-      inputCat,
-      inputType
-    )
+    updateProduct(this.props.match.params.id, {
+      productBrand,
+      serialNumber,
+      manufacturerInfo,
+      price,
+      rating,
+      category,
+      type
+    })
       .then(res => {
         console.log(res.data);
       })
@@ -72,69 +72,69 @@ export default class EditFormProduct extends Component {
   };
 
   render() {
-    const { inputProductBrand } = this.state;
+    const { productBrand } = this.state;
     return isLoggedIn() ? (
       <div className="field">
         <h1 className="title">Edit</h1>
-        <form>
+        <form onSubmit={event => this.handleSubmit(event)}>
           <label className="label">Product:</label>
           <input
             type="text"
             id="productBrand"
-            name="inputProductBrand"
-            value={inputProductBrand || ""}
+            name="productBrand"
+            value={productBrand || ""}
             onChange={this.handleInputChange}
           />
           <label className="label">Serial Number:</label>
           <input
             type="text"
             id="serialNumber"
-            name="inputSN"
-            value={this.state.inputSN || ""}
+            name="serialNumber"
+            value={this.state.serialNumber || ""}
             onChange={this.handleInputChange}
           />
           <label className="label">Manufacturer Information:</label>
           <input
             type="text"
             id="manufacturerInfo"
-            name="inputMI"
-            value={this.state.inputMI || ""}
+            name="manufacturerInfo"
+            value={this.state.manufacturerInfo || ""}
             onChange={this.handleInputChange}
           />
           <label className="label">Price(€):</label>
           <input
             type="number"
             id="price"
-            name="inputPrice"
+            name="price"
             min="0"
-            value={this.state.inputPrice || ""}
+            value={this.state.price || ""}
             onChange={this.handleInputChange}
           />
           <label className="label">Rating:</label>
           <input
             type="number"
             id="rating"
-            name="inputRating"
+            name="rating"
             min="1"
             step="1"
             max="5"
-            value={this.state.inputRating || ""}
+            value={this.state.rating || ""}
             onChange={this.handleInputChange}
           />
           <label className="label">Category:</label>
           <input
             type="input"
             id="category"
-            name="inputCat"
-            value={this.state.inputCat || ""}
+            name="category"
+            value={this.state.category || ""}
             onChange={this.handleInputChange}
           />
           <label className="label">Type:</label>
           <input
             type="input"
             id="type"
-            name="inputType"
-            value={this.state.inputType || ""}
+            name="type "
+            value={this.state.type || ""}
             onChange={this.handleInputChange}
           />
           {/* <label className="label">Comment:</label>
