@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { getProduct, updateProduct } from "../../api/apiHandler";
 import { isLoggedIn } from "../../auth/utility";
 import { Redirect } from "react-router-dom";
+import "./styling.css";
 
 export default class EditFormProduct extends Component {
   constructor(props) {
@@ -74,70 +75,78 @@ export default class EditFormProduct extends Component {
   render() {
     const { productBrand } = this.state;
     return isLoggedIn() ? (
-      <div className="field">
-        <h1 className="title">Edit</h1>
-        <form onSubmit={event => this.handleSubmit(event)}>
-          <label className="label">Product:</label>
-          <input
-            type="text"
-            id="productBrand"
-            name="productBrand"
-            value={productBrand || ""}
-            onChange={this.handleInputChange}
-          />
-          <label className="label">Serial Number:</label>
-          <input
-            type="text"
-            id="serialNumber"
-            name="serialNumber"
-            value={this.state.serialNumber || ""}
-            onChange={this.handleInputChange}
-          />
-          <label className="label">Manufacturer Information:</label>
-          <input
-            type="text"
-            id="manufacturerInfo"
-            name="manufacturerInfo"
-            value={this.state.manufacturerInfo || ""}
-            onChange={this.handleInputChange}
-          />
-          <label className="label">Price(€):</label>
-          <input
-            type="number"
-            id="price"
-            name="price"
-            min="0"
-            value={this.state.price || ""}
-            onChange={this.handleInputChange}
-          />
-          <label className="label">Rating:</label>
-          <input
-            type="number"
-            id="rating"
-            name="rating"
-            min="1"
-            step="1"
-            max="5"
-            value={this.state.rating || ""}
-            onChange={this.handleInputChange}
-          />
-          <label className="label">Category:</label>
-          <input
-            type="input"
-            id="category"
-            name="category"
-            value={this.state.category || ""}
-            onChange={this.handleInputChange}
-          />
-          <label className="label">Type:</label>
-          <input
-            type="input"
-            id="type"
-            name="type "
-            value={this.state.type || ""}
-            onChange={this.handleInputChange}
-          />
-          {/* <label className="label">Comment:</label>
+      <section>
+        <div className="field">
+          <h1 className="title">Edit</h1>
+          <form onSubmit={event => this.handleSubmit(event)}>
+            <label className="label">Product:</label>
+            <input
+              class="input"
+              type="text"
+              id="productBrand"
+              name="productBrand"
+              value={productBrand || ""}
+              onChange={this.handleInputChange}
+            />
+            <label className="label">Serial Number:</label>
+            <input
+              class="input"
+              type="text"
+              id="serialNumber"
+              name="serialNumber"
+              value={this.state.serialNumber || ""}
+              onChange={this.handleInputChange}
+            />
+            <label className="label">Manufacturer Information:</label>
+            <input
+              class="input"
+              type="text"
+              id="manufacturerInfo"
+              name="manufacturerInfo"
+              value={this.state.manufacturerInfo || ""}
+              onChange={this.handleInputChange}
+            />
+            <label className="label">Price(€):</label>
+            <input
+              class="input"
+              type="number"
+              id="price"
+              name="price"
+              min="0"
+              value={this.state.price || ""}
+              onChange={this.handleInputChange}
+            />
+            <label className="label">Rating:</label>
+            <input
+              class="input"
+              type="number"
+              id="rating"
+              name="rating"
+              min="1"
+              step="1"
+              max="5"
+              value={this.state.rating || ""}
+              onChange={this.handleInputChange}
+            />
+            <label className="label">Category:</label>
+            <input
+              class="input"
+              type="input"
+              id="category"
+              name="category"
+              value={this.state.category || ""}
+              onChange={this.handleInputChange}
+            />
+            <label className="label">Type:</label>
+            <input
+              class="input"
+              type="input"
+              id="type"
+              name="type "
+              value={this.state.type || ""}
+              onChange={this.handleInputChange}
+            />
+            {/* <label className="label">Comment:</label>
           <textarea
             className="textarea is mobile "
             id="comment"
@@ -146,10 +155,11 @@ export default class EditFormProduct extends Component {
             placeholder="Tell us how you like/dislike the product"
             onChange={this.handleInputChange}
           /> */}
-          {/* <input name="image" type="file" onChange={this.handleInputChange} /> */}
-          <input className="button is-link" type="submit" value="Submit" />
-        </form>
-      </div>
+            {/* <input name="image" type="file" onChange={this.handleInputChange} /> */}
+            <input className="button is-link" type="submit" value="Submit" />
+          </form>
+        </div>
+      </section>
     ) : (
       window.confirm("please login/signup for Product Form") && (
         <Redirect to="/login" />

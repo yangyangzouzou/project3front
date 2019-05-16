@@ -14,6 +14,7 @@ import DashboardProduct from "./components/product/DashboardProduct";
 import 'bulma/css/bulma.css';
 import Conditions from "./components/functional/conditions";
 import "./App.css"
+import Footer from "./components/functional/footer"
 
 const history = createBrowserHistory();
 
@@ -51,6 +52,9 @@ class App extends React.Component {
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/dashboard-product" component={DashboardProduct} />
           </Switch>
+          <footer class="footer">
+            <Footer />
+          </footer>
         </main>
       </div>
     );

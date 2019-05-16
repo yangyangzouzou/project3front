@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { login } from "../../auth/ajax";
 import { setLocalToken } from "../../auth/utility";
-import "./form.css"
+import "./form.css";
 
 export default class Login extends Component {
   state = {
@@ -31,11 +31,11 @@ export default class Login extends Component {
   render() {
     return (
       <React.Fragment>
-        <br></br>
+        <br />
         <h1 className="title">Login</h1>
         <form className="form" onSubmit={this.handleSubmit}>
           <label className="clickable label" htmlFor="username">
-            username
+            Username
           </label>
           <input
             className="input"
@@ -45,7 +45,7 @@ export default class Login extends Component {
             onChange={this.handleInput}
           />
           <label className="clickable label" htmlFor="password">
-            password
+            Password
           </label>
           <input
             className="input"
@@ -54,10 +54,14 @@ export default class Login extends Component {
             name="password"
             onChange={this.handleInput}
           />
+          <br />
+          <br />
           <div class="field is-grouped">
-          <button class="button is-link">OK</button>
-          <br/>
-          <a href = '/signup' class="button is-text" >You don't have an account? 3 seconds to sign up</a>
+            <button class="button is-link">OK</button>
+            <br />
+            <a href="/signup" class="button is-text">
+              You don't have an account? 3 seconds to sign up
+            </a>
           </div>
         </form>
       </React.Fragment>
