@@ -62,12 +62,19 @@ export default class NavMain extends Component {
                   </div>
                 </div>
               </nav>
+            </div>
+            <span>
+              {" "}
+              &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
 
+            <div className="navbar-end">
               <NavLink className="navbar-item" to="/dashboard">
                 Me
               </NavLink>
             </div>
-
             <div className="navbar-end">
               <NavLink
                 className="navbar-item"
