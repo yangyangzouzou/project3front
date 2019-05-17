@@ -12,6 +12,7 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.0",
     "react-typed": "^1.1.2",
+    "redux": "^4.0.1",
     "typed.js": "^2.0.10",
     "yarn": "^1.15.2"
   },

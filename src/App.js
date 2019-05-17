@@ -16,6 +16,7 @@ import Conditions from "./components/functional/conditions";
 import "./App.css"
 import Footer from "./components/functional/footer"
 
+
 const history = createBrowserHistory();
 
 class App extends React.Component {
@@ -35,6 +36,7 @@ class App extends React.Component {
   }
 
   render() {
+
     return (
       <div className="App">
         <header id="header_main">
@@ -61,6 +63,5 @@ class App extends React.Component {
   }
 }
 
-export default withRouter(App);
 
-//test 3
+export default withRouter(App);

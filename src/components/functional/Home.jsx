@@ -16,7 +16,7 @@ export default class ProductsList extends Component {
   render() {
     const { products } = this.state;
     return isLoggedIn() ? (
-      <section>
+      <section className="sectionHome">
         <ul className="list products">
           {products.map((product, index) => (
             <li className="clickable item product" key={index}>
@@ -36,7 +36,7 @@ export default class ProductsList extends Component {
                         </div>
 
                         <div class="media-content">
-                          <p class="title is-4">
+                          <p class="subtitle is-6">
                             Product: {product.productBrand}
                           </p>
                           <p class="subtitle is-6">Price(€): {product.price}</p>
@@ -55,51 +55,57 @@ export default class ProductsList extends Component {
         </ul>
       </section>
     ) : (
-      <section>
-        <ul className="list products">
+      <section className="home">
+        <ul className="sectionHome">
+          <Typed
+            className="subtitle is-1"
+            strings={[
+              "Welcome to our community <3 <br/> here you can find anything "
+            ]}
+            typeSpeed={45}
+            backSpeed={50}
+            loop
+          />
           <br />
           <br />
           <br />
-          <div>
-            <Typed
-              strings={[
-                "Welcome to our community, here you can find anything <3"
-              ]}
-              typeSpeed={60}
-            />
-            <br />
 
-            <Typed
-              strings={[
-                "Search for products",
-                "Search for categories",
-                "Search for brands"
-              ]}
-              typeSpeed={40}
-              backSpeed={50}
-              attr="placeholder"
-              loop
-            >
-              <input type="text" />
-            </Typed>
-          </div>
+          <Typed
+            strings={[
+              "Search for products",
+              "Search for categories",
+              "Search for brands"
+            ]}
+            typeSpeed={40}
+            backSpeed={50}
+            attr="placeholder"
+            loop
+          >
+            <input type="text" />
+          </Typed>
+
           <br />
-          <p>
-            Would you like to discover more?{" Please Login/Sign Up "}
+          <br />
+          <br />
+
+          <p className="subtitle is-3">
+            Would you like to discover more? <br />
+            {" Please Login/Sign Up "}
             <br />
-            <br />
-            <div class="control">
+            <div class="controlAdmin">
               <a href="/login" class="button is-link">
                 Login
               </a>
             </div>
-            <br />
-            <div class="control">
+            <div class="controlAdmin">
               <a href="/signup" class="button is-link">
                 Sign Up
               </a>
             </div>
           </p>
+
+          <section />
+
           {products.map((product, index) => (
             <li className="clickable item product" key={index}>
               <Link to={`api/product`}>
@@ -118,7 +124,7 @@ export default class ProductsList extends Component {
                         </div>
 
                         <div class="media-content">
-                          <p class="title is-4">
+                          <p class="subtitle is-6">
                             Product: {product.productBrand}
                           </p>
                           <p class="subtitle is-6">Price(€): {product.price}</p>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { getAllProducts } from "../../api/apiHandler";
 import { Link } from "react-router-dom";
 import { isLoggedIn } from "../../auth/utility";
-import "./styling.css";
+import "./stylingProduct.css";
 
 export default class ProductsList extends Component {
   state = { products: [] };
@@ -14,7 +14,7 @@ export default class ProductsList extends Component {
   render() {
     const { products } = this.state;
     return isLoggedIn() ? (
-      <section>
+      <section class="productTable">
         <ul className="list products">
           {products.map((product, index) => (
             <li className="clickable item product" key={index}>
@@ -39,7 +39,7 @@ export default class ProductsList extends Component {
                       </div>
 
                       <div class="media-content">
-                        <p class="title is-4">
+                        <p class="subtitle is-6">
                           Product: {product.productBrand}
                         </p>
                         <p class="subtitle is-6">Price(€): {product.price}</p>
@@ -57,7 +57,7 @@ export default class ProductsList extends Component {
         </ul>
       </section>
     ) : (
-      <section>
+      <section class="productTable">
         <ul className="list products">
           <br />
           <br />
@@ -86,7 +86,7 @@ export default class ProductsList extends Component {
                       </div>
 
                       <div class="media-content">
-                        <p class="title is-4">
+                        <p class="subtitle is-6">
                           Product: {product.productBrand}
                         </p>
                         <p class="subtitle is-6">Price(€): {product.price}</p>

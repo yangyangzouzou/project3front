@@ -1,6 +1,22 @@
 section {
-  padding: 5vh 5vw;
+  padding: 3vh 15vw;
 }
 input::placeholder {
   color: blue;
+}
+
+/* .sectionHome {
+  background-image: url("https://cdn.shopify.com/s/files/1/0078/1058/0553/files/Visuel_01_f5764310-3211-41f2-a482-99095b5105fb.jpg?v=1545067021");
+} */
+
+.sectionHome2 {
+  background-color: transparent;
+}
+
+.controlAdmin {
+  padding: 3vh 25vw;
+}
+
+.home {
+  padding: 3vh 25vw;
 }

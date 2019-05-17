@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { getProduct, updateProduct } from "../../api/apiHandler";
 import { isLoggedIn } from "../../auth/utility";
 import { Redirect } from "react-router-dom";
-import "./styling.css";
+import "./stylingProduct.css";
 
 export default class EditFormProduct extends Component {
   constructor(props) {
@@ -75,9 +75,9 @@ export default class EditFormProduct extends Component {
   render() {
     const { productBrand } = this.state;
     return isLoggedIn() ? (
-      <section>
+      <section class="editTable">
         <div className="field">
-          <h1 className="title">Edit</h1>
+          <h1 className="subtitle is-2">Edit</h1>
           <form onSubmit={event => this.handleSubmit(event)}>
             <label className="label">Product:</label>
             <input
@@ -156,6 +156,8 @@ export default class EditFormProduct extends Component {
             onChange={this.handleInputChange}
           /> */}
             {/* <input name="image" type="file" onChange={this.handleInputChange} /> */}
+            <br />
+            <br />
             <input className="button is-link" type="submit" value="Submit" />
           </form>
         </div>

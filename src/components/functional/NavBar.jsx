@@ -32,7 +32,7 @@ export default class NavMain extends Component {
         <nav className="navbar" role="navigation" aria-label="main navigation">
           <div className="navbar-start">
             <div>
-              <img src={logo} width="56" height="14" alt="logo" />
+              <img src={logo} alt="logo" />
             </div>
             <NavLink className="navbar-item" to="/" exact>
               Home
@@ -66,7 +66,9 @@ export default class NavMain extends Component {
               <NavLink className="navbar-item" to="/dashboard">
                 Me
               </NavLink>
+            </div>
 
+            <div className="navbar-end">
               <NavLink
                 className="navbar-item"
                 to="/logout"
@@ -83,12 +85,14 @@ export default class NavMain extends Component {
         <nav className="navbar" role="navigation" aria-label="main navigation">
           <div className="navbar-start">
             <div>
-              <img src={logo} width="56" height="14" alt="logo" />
+              <img src={logo} alt="logo" />
             </div>
             <NavLink className="navbar-item" to="/all-products">
               Have a look
             </NavLink>
+          </div>
 
+          <div className="navbar-end">
             <NavLink className="navbar-item" to="/signup">
               Sign Up
             </NavLink>

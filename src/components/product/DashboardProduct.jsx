@@ -3,7 +3,7 @@ import { getAllProducts, deleteProduct } from "../../api/apiHandler";
 import { getLocalToken } from "./../../auth/utility";
 import { isLoggedIn } from "../../auth/utility";
 import { Redirect, Link } from "react-router-dom";
-import "./styling.css";
+import "./stylingProduct.css";
 
 export default class DashboardProduct extends Component {
   constructor(props) {
@@ -28,7 +28,7 @@ export default class DashboardProduct extends Component {
     console.log(this.state.products[0], "aaaaaaaaaaaaaaa");
 
     return isLoggedIn() ? (
-      <section>
+      <section class="editTable">
         <table class="table">
           <thead>
             <tr className="row">
