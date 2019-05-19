@@ -20,3 +20,7 @@ input::placeholder {
 .home {
   padding: 3vh 25vw;
 }
+
+article {
+  padding: 3vh 15vw;
+}

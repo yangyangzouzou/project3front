@@ -60,7 +60,7 @@ export default class ProductsList extends Component {
           <Typed
             className="subtitle is-1"
             strings={[
-              "Welcome to our community <3 <br/> here you can find anything "
+              "Welcome to our community <strong>  menmomo. <3 </strong>  <br/> It is the <strong> moment </strong> that we break the <strong> stereotype </strong> of current society <br/> Men have the right to use/promote cosmetic products to make them <strong>  shinning and pretty  <3 </strong>  "
             ]}
             typeSpeed={45}
             backSpeed={50}
@@ -89,21 +89,16 @@ export default class ProductsList extends Component {
           <br />
 
           <p className="subtitle is-3">
-            Would you like to discover more? <br />
-            {" Please Login/Sign Up "}
+            You can have look how other share their experience
             <br />
-            <div class="controlAdmin">
-              <a href="/login" class="button is-link">
-                Login
-              </a>
-            </div>
-            <div class="controlAdmin">
-              <a href="/signup" class="button is-link">
-                Sign Up
-              </a>
-            </div>
+            <p className="subtitle is-6">
+              Don't panic if it is your first time to buy some makeup products,
+              you can start by buying a nice eyebrow pencil. Eyebrows are one of
+              a person's most prominent facial features because of the many
+              functions they perform. BINGO ↓
+            </p>
           </p>
-
+          <br />
           <section />
 
           {products.map((product, index) => (
@@ -141,6 +136,23 @@ export default class ProductsList extends Component {
             </li>
           ))}
         </ul>
+        <br />
+        <br />
+        <p className="subtitle is-3">
+          If you would like to discover more? <br />
+          {" Please Login/Sign Up "}
+          <br />
+          <div class="controlAdmin">
+            <a href="/login" class="button is-link">
+              Login
+            </a>
+          </div>
+          <div class="controlAdmin">
+            <a href="/signup" class="button is-link">
+              Sign Up
+            </a>
+          </div>
+        </p>
       </section>
     );
   }
